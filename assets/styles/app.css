@@ -1,0 +1,236 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+header,
+nav,
+main,
+article,
+footer {
+    padding: 20px;
+    /* border: 1px solid #ccc; */
+    margin: 10px;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 5%;
+    background-color: #0d6efd;
+    height: 5vh;
+    position: static;
+    top: 0;
+    left: 0;
+    margin: 0;
+}
+
+header a {
+    text-decoration: none;
+    color: white;
+}
+
+
+nav ul.list_navbar {
+    list-style: none;
+}
+
+nav ul.list_navbar li {
+    display: inline;
+    margin-right: 15px;
+}
+
+nav ul.list_navbar li a {
+    transition: all 0.3s ease 0s;
+    text-decoration: none;
+    color: white;
+}
+
+nav ul.list_navbar li a:hover {
+    /* color: #0088a9; */
+    font-weight: bold;
+}
+
+nav a {
+    text-decoration: none;
+    color: #333;
+}
+
+main {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    /* align-items: center; */
+    row-gap: 1rem;
+    gap: 1.5rem;
+
+
+}
+
+main .content {
+    flex: 1;
+    background-color: #fff;
+    /* padding: 10px; */
+    /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); */
+}
+
+main .daftar_kategori ul {
+    border-radius: 10px;
+    border-top-right-radius: 20px;
+    text-align: center;
+    border: 2px solid #f0f0f0;
+    margin-top: 20px;
+    /* position: relative; */
+}
+
+main .daftar_kategori li {
+    list-style-type: none;
+    border-bottom: 2px solid #f0f0f0;
+    padding: 15px;
+}
+
+main .daftar_kategori li.active {
+    background-color: #0d6efd;
+}
+
+main .daftar_kategori li.active a {
+    color: white;
+}
+
+main .daftar_kategori li a {
+    text-decoration: none;
+    color: black;
+}
+
+main .daftar_kategori li:hover {
+    cursor: pointer;
+    color: white;
+    background-color: #0d6efd;
+}
+
+main .daftar_kategori li:hover A {
+    color: white;
+
+}
+
+main .daftar_produk {
+    flex: 2;
+    /* flex-direction: row; */
+
+}
+
+main .daftar_produk .card_produk {
+    display: flex;
+    justify-content: center;
+    max-width: 650px;
+    margin-top: 20px;
+    gap: 2rem;
+    /* flex: 1; */
+
+}
+
+main .daftar_produk .card_produk .card {
+
+    display: flex;
+    flex-direction: column;
+    width: clamp(20rem, calc(20rem + 2vw), 22rem);
+    overflow: hidden;
+    box-shadow: 0 0.1rem 1rem rgba(0, 0, 0, 0.1);
+    border-radius: 1em;
+    background: #ece9e6;
+    background: linear-gradient(to right, #ffffff, #ece9e6);
+
+}
+
+img {
+    max-width: 100%;
+    min-height: 30vh;
+    display: block;
+    object-fit: cover;
+}
+
+main .daftar_produk .card_produk .card .card_body {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+
+main .daftar_produk .card_produk .card .card_body h4 {
+    font-size: 1.5rem;
+    text-transform: capitalize;
+}
+
+main .daftar_produk .card_produk .card .card_footer {
+    padding: 1rem;
+    margin-top: auto;
+    border-top: 2px solid #f0f0f0;
+    background-color: white;
+}
+
+main .daftar_produk .card_produk .card .card_footer p {
+    text-align: center;
+}
+
+main .content h2.title {
+    text-align: center;
+}
+
+main .hasil {
+    flex: 2;
+    max-width: 300px;
+}
+
+main .hasil .list_hasil {
+    padding: 5px;
+    /* border: 2px solid #f0f0f0; */
+    margin-top: 20px;
+    overflow: scroll;
+    height: 50%;
+}
+
+main .hasil .btn_bayar {
+    width: 100%;
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #0d6efd;
+    border: none;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+main .hasil .btn_bayar:hover {
+
+    background-color: #0264f5;
+}
+
+main .hasil .list_hasil .list_hasil_item .row_hasil {
+    display: flex;
+    flex-direction: row;
+    gap: 2em;
+    /* min-width: 100%; */
+    border: 4px solid #f0f0f0;
+    padding: 25px;
+    margin-top: 5px;
+    border-radius: 10px;
+
+}
+
+
+/* article {
+    /* flex: 1; */
+/* } */
+
+footer {
+    text-align: center;
+    background-color: #f2f2f2;
+    clear: both;
+}
