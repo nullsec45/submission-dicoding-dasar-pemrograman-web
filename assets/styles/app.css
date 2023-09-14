@@ -8,7 +8,7 @@ body {
     font-family: Arial, sans-serif;
 }
 
-header,
+header:not(.header_author),
 nav,
 main,
 article,
@@ -18,7 +18,7 @@ footer {
     margin: 10px;
 }
 
-header {
+header:not(.header_author) {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -123,6 +123,29 @@ main .daftar_produk {
     flex: 2;
     /* flex-direction: row; */
 
+}
+
+main .blog {
+    flex: 3;
+}
+
+main .content.blog img {
+    width: 100%;
+}
+
+main .content.blog .text_blog {
+    text-align: justify;
+    margin-top: 20px;
+}
+
+main .content.blog h1 {
+    font-size: 50px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+main .penulis {
+    flex: 2;
 }
 
 main .daftar_produk .card_produk {
@@ -233,4 +256,8 @@ footer {
     text-align: center;
     background-color: #f2f2f2;
     clear: both;
+}
+
+footer a {
+    text-decoration: none;
 }
