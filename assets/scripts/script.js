@@ -1,7 +1,12 @@
 const daftar_kategori = document.querySelectorAll("main .daftar_kategori ul li");
 const card_produk = document.querySelector("main .daftar_produk .card_produk");
 const daftar_produk_container = document.querySelector("main .daftar_produk .row_card_produk");
-
+const nav_menu = document.querySelectorAll("nav ul.list_navbar li");
+const daftar_kategori_parent = document.querySelector(".content.daftar_kategori");
+const daftar_produk_parent = document.querySelector(".content.daftar_produk");
+const daftar_hasil_parent = document.querySelector(".content.hasil");
+const daftar_blog_parent = document.querySelector(".content.blog");
+const daftar_author_parent = document.querySelector(".content.author");
 
 
 let daftar_produk = {
@@ -83,14 +88,6 @@ let daftar_produk = {
     ]
 }
 
-// let arrMakanan = Math.ceil(daftar_produk.makanan.length / 3);
-
-// let makanan = [];
-// for (let i = 0; i < daftar_produk.makanan.length; i += arrMakanan) {
-//     makanan.push(daftar_produk.makanan.slice(i, i + arrMakanan));
-// }
-// console.log(makanan);
-
 let arrMaksimal = 3;
 let makanan = [];
 let cemilan = [];
@@ -128,6 +125,29 @@ makanan.forEach((arr, i) => {
     });
 });
 
+nav_menu.forEach((item) => {
+    item.addEventListener("click", function () {
+        const kategori_aktif = document.querySelector("header nav ul.list_navbar li a.active");
+        console.log(kategori_aktif);
+        kategori_aktif.className = kategori_aktif.classList.remove("active");
+        this.firstElementChild.classList.add("active");
+        let menu = this.firstElementChild.innerText;
+        if (menu == "Menu") {
+            daftar_kategori_parent.style.display = "block";
+            daftar_produk_parent.style.display = "block";
+            daftar_hasil_parent.style.display = "block";
+            daftar_blog_parent.style.display = "none";
+            daftar_author_parent.style.display = "none";
+        } else {
+            daftar_kategori_parent.style.display = "none";
+            daftar_produk_parent.style.display = "none";
+            daftar_hasil_parent.style.display = "none";
+            daftar_blog_parent.style.display = "block";
+            daftar_author_parent.style.display = "block";
+        }
+    })
+})
+
 daftar_kategori.forEach((item) => {
     item.addEventListener("click", () => {
         const kategori_aktif = document.querySelector("main  .daftar_kategori ul li.active");
@@ -136,7 +156,6 @@ daftar_kategori.forEach((item) => {
 
         let nav_link = item.querySelector("a");
         let kategori = nav_link.getAttribute("href").split("#")[1];
-        console.log(kategori);
 
         if (kategori == "makanan") {
             daftar_produk_container.innerHTML = "";
